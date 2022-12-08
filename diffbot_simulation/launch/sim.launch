@@ -1,0 +1,23 @@
+<launch>
+    
+    <!-- Argumentos a variar en las distintas simulaciones, por defecto mapa de diffbot original-->
+    <arg name="map_file" default="$(find diffbot_simulation)/maps/db_world.yaml"/>
+    <arg name="world_name" default="$(find diffbot_simulation)/worlds/db_world.world"/>
+
+    <!-- Llamamos a otros lanzadores para cargar modelo de robot en gazebo, para su control teleoperado
+    de movimiento con la GUI del plugin rqt/robot_steering y visualizar en rviz los datos-->
+    <include file="$(find diffbot_simulation)/launch/diffbot_view.launch">
+        <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+
+    <include file="$(find diffbot_control)/launch/diffbot_control.launch">
+    </include>
+
+    <include file="$(find diffbot_simulation)/launch/diffbot_rviz.launch">
+    </include>
+
+    <!-- Map server
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/> -->
+
+
+</launch>

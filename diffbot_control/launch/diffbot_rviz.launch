@@ -1,0 +1,6 @@
+<launch>
+    <arg name="rvizconfig" default="$(find diffbot_gazebo)/rviz/diffbot.rviz" />
+
+    <!-- Launch visualization in rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>

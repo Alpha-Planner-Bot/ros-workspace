@@ -1,0 +1,7 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/leon/Personal/Control_AND_Programacion_Robots/proyecto_CPR/ros_workspace/devel/lib/python2.7/dist-packages",
+        "/home/leon/Personal/Control_AND_Programacion_Robots/CPR_Practicas/ros_workspace/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
+}
