@@ -12,19 +12,18 @@
     </gazebo>
   </xacro:macro>
 
-  <!-- imu_sensor plugin-->
-  <gazebo>
-    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
-      <alwaysOn>true</alwaysOn>
-      <bodyName>base_link</bodyName>
-      <topicName>imu</topicName>
-      <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.0</gaussianNoise>
-      <updateRate>20.0</updateRate>
-    </plugin>
-  </gazebo>
+  <!-- range_sensor plugin
+  <plugin name="gazebo_range_sensor" filename="libgazebo_ros_range.so" >
+        <alwaysOn>true</alwaysOn>
+        <updateRate>5</updateRate>
+        <bodyName>base_link</bodyName>
+        <topicName>range/fl</topicName>
+        <frameName>range_front_left_frame</frameName>
+        <fov>0.1</fov>
+        <radiation>ultrasound</radiation>
+        <gaussianNoise>0.005</gaussianNoise>
+   </plugin> -->
 
-  <!-- sonar_sensor plugin-->
   
 
   <!-- xacro to set the friction for the wheel. This patch was taken from the MIR
