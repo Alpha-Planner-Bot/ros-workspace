@@ -66,6 +66,26 @@
                    enable_gpu="${sensor_prop['laser']['enable_gpu']}">
   </xacro:laser>
 
+  <xacro:imu_sensor parent_link="base_link" sensor_prop="${sensor_prop}">
+                   <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:imu_sensor>
+
+    <!--Added Ultrasonic sensor frame -->
+  <link name="ultrasonic_link">
+    <visual>
+      <origin rpy="0.0 0 ${-pi/2}" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diffbot_description/meshes/sensors/ultrasonic.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+   <joint name="base_to_ultrasonic" type="fixed">
+    <parent link="base_link"/>
+    <child link="ultrasonic_link"/>
+    <origin xyz="0.065 0 0.01"/>
+  </joint>
+
 
   <!-- Gazebo -->
   <xacro:gazebo_ros_control robotNamespace="/diffbot">

@@ -1,6 +1,6 @@
 <launch>
     <!-- Cargamos archivo de configuración de RVIZ-->
-    <arg name="rvizconfig" default="$(find diffbot_simulation)/rviz/basic_lidar_view.rviz" />
+    <arg name="rvizconfig" default="$(find diffbot_simulation)/rviz/basic_config.rviz" />
 
     <!-- Abrimos rviz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
