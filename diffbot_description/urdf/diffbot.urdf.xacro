@@ -49,7 +49,6 @@
                       base_props="${base_props}" > 
   </xacro:wheel>
 
-
   <!-- Motors -->
   <xacro:motor prefix="right" reflect="-1" 
                       motor_props="${motor_props}"
@@ -66,6 +65,7 @@
                    sensor_prop="${sensor_prop}"
                    enable_gpu="${sensor_prop['laser']['enable_gpu']}">
   </xacro:laser>
+
 
   <!-- Gazebo -->
   <xacro:gazebo_ros_control robotNamespace="/diffbot">
