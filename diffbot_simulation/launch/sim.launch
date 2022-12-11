@@ -13,11 +13,7 @@
     <include file="$(find diffbot_control)/launch/diffbot_control.launch">
     </include>
 
-    <!--<include file="$(find diffbot_simulation)/launch/diffbot_rviz.launch">
-    </include>-->
-
-    <!-- Map server
-    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/> -->
-
+    <!-- Llamar a Localización -->
+    <include file="$(find diffbot_localization)/launch/KF_diffbot.launch"/>
 
 </launch>
