@@ -1,0 +1,32 @@
+<launch>
+
+    <!-- LANZAMIENTO DEL MODELO -->
+    <!-- Argumentos -->
+    <arg name="model" default="diffbot" doc="model type [diffbot, remo]"/>
+    <arg name="world_name" default="$(find diffbot_gazebo)/worlds/db_world.world"/>
+
+    <!-- Lanzamiento -->
+    <include file="$(find diffbot_gazebo)/launch/diffbot_view.launch">
+        <arg name="model" value="$(arg model)" />
+        <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+
+    <!-- PAQUETE DE CONTROL -->
+    <include file="$(find diffbot_control)/launch/diffbot_control.launch">
+        <arg name="model" value="$(arg model)" />
+    </include>
+
+    <!-- NODO DE MAPEADO (GMAPPING) -->
+    <node pkg="gmapping" type="slam_gmapping" name="gmapping">
+        <param name="base_frame" value="base_footprint"/>
+        <param name="odom_frame" value="odom" />
+        <param name="delta" value="0.05" />    <!-- Valor de resolución a 0.1 píxel/metro, en value = "0.1" -->
+
+        <remap from="scan" to="diffbot/scan" /> <!-- Diffbot no publica el láser en /scan, como espera gmapping, lo hace en /Diffbot/scan-->
+
+    </node>
+
+    <!-- RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find localizacion_diffbot)/rviz/mapeadoDiffbot.rviz" />
+
+</launch>
