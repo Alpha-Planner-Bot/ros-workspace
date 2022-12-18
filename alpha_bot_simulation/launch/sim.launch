@@ -16,4 +16,10 @@
     <!-- Llamar a Localización -->
     <include file="$(find alpha_bot_localization)/launch/KF_alpha_bot.launch"/>
 
+   <!--Llamamos al nodo de odometría para que publique la odometría del robot en el topic "/wheel_odometry" -->
+    <node pkg="alpha_bot_odometry" name="alpha_bot_odometry_node" type="alpha_bot_odometry_node" output="screen" />  
+
+    <!--Llamamos al nodo de ground_truth para que corrija los datos del ground truth -->
+    <node pkg="alpha_bot_odometry" name="ground_truth_translation_node" type="ground_truth_translation_node" output="screen" />  
+
 </launch>
