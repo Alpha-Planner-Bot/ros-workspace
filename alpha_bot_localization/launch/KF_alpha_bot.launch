@@ -6,7 +6,7 @@
 
   
   <!-- RVIZ -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find alpha_bot_localization)/rviz/KFalpha_bot.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find alpha_bot_localization)/rviz/KF_alpha_bot.rviz" />
 
   <!-- AMCL -->
   <!-- Argumentos -->
