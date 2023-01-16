@@ -2,6 +2,7 @@
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Twist.h>
+#include <cmath>                          //Para el uso de la función "abs"
 #include <random>
 
 /* VARIABLES GLOBALES */
@@ -30,10 +31,15 @@ vx     = msg.twist.twist.linear.x;
 vy     = msg.twist.twist.linear.y;
 vth    = msg.twist.twist.angular.z;
 
-//Añadir el ruido gaussiano
-vx  += dist();
-vy  += dist();
-vth += dist();
+//Añadir el ruido gaussiano sólo si el robot está en movimiento (la odometría no provoca derivas si el vehículo está totalmente detenido (si todas las velocidades son 0))
+//if((vx!=0) || (vy!=0) || (vth!=0)){
+if((abs(vx)>=0.01) || (abs(vy)>=0.01) || (abs(vth)>=0.01)){   //La velocidad tiene pequeñas variaciones numéricas del orden de +-10^(-7) y puntualmente como maximo del orden de 
+                                                              //alrededir de +-0.01 => si es superior a esto, consideramos que hay movimiento => los encoders introducen error
+  vx  += dist();
+  vy  += dist();
+  vth += dist();
+}
+
 
 }
 
