@@ -1,5 +1,5 @@
 # ALPHA BOT PROJECT
-![Robot_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/PlanteamientoGeneral.png)
+![Robot_image](https://github.com/arubedaq/alpha-bot/blob/main/images/PlanteamientoGeneral.png)
 
 ## Project description
 This project is based on the existing repository: https://github.com/ros-mobile-robots/diffbot. All the documentation and results of the project are available in "AlphaBotPlanner_Memoria.pdf".
@@ -16,19 +16,19 @@ This project implements the entire navigation stack for an autonomous ground mob
 
 Ground Truth-based Localization: We use the actual robot position for debugging and some experiments.
 
-![EKF_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/EKF.png)
+![EKF_image](https://github.com/arubedaq/alpha-bot/blob/main/images/EKF.png)
 
 - Path Planning: We have developed a path planning algorithm based on Dijkstra. This algorithm relies on information from a global cost map, so it will not take into account any possible map modifications during runtime; it will be treated as static. The planner has been programmed by ourselves, but to achieve this, we need to use a cost map based on a previously created global map using the ROS package "gmapping" (http://wiki.ros.org/gmapping).
 
-![Planner_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/Planner.png)
+![Planner_image](https://github.com/arubedaq/alpha-bot/blob/main/images/Planner.png)
 
 - High-Level Control (Path Following): The developed high-level control algorithm is a path following algorithm based on Pure Pursuit. From it, we have made a series of specific adaptations for our configuration and have proposed some simplifications for its implementation.
 
-![PurePursuit_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/PurePursuit.png)
+![PurePursuit_image](https://github.com/arubedaq/alpha-bot/blob/main/images/PurePursuit.png)
 
 Next, we present a series of graphs from a representative experiment:
 
-![Experiment_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/ExperimentoRepresentativo.png)
+![Experiment_image](https://github.com/arubedaq/alpha-bot/blob/main/images/ExperimentoRepresentativo.png)
 
 
 ## Tested Platforms
