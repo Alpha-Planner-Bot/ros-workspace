@@ -26,7 +26,7 @@ Ground Truth-based Localization: We use the actual robot position for debugging 
 
 ![PurePursuit_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/PurePursuit.png)
 
-The obtained results can be found in "VideoExperiments.mp4". Next, we present a series of graphs from a representative experiment:
+Next, we present a series of graphs from a representative experiment:
 
 ![Experiment_image](https://github.com/arubedaq/HomeCollectionRobot/blob/main/images/ExperimentoRepresentativo.png)
 
